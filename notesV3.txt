@@ -1,0 +1,34 @@
+*********ћаршруты без аутентификации**********
+POST https://notes81.herokuapp.com/api/register
+	в теле запроса передаешь login, email, password, password_confirm
+
+POST https://notes81.herokuapp.com/api/login
+	в теле передаешь email, password
+
+*********ћаршруты с аутентификации**********
+!!!!!! ¬ header добавл€ем поле "Authorization: Bearer {token}" !!!!!!!
+token - токен, полученный после того как залогинились.
+
+≈сли пользователь не прошел аутентификацию, то произойдет перенаправление на маршрут "unauthorized" и 
+будет отправлено сообщение "Unauthorized"
+
+
+GET	https://notes81.herokuapp.com/api/user - получить логин пользовател€
+GET	https://notes81.herokuapp.com/api/logout - токен становитс€ не валидным и удал€етс€ с Ѕƒ
+
+
+GET https://notes81.herokuapp.com/api/notes - получить заметки пользовател€
+
+GET https://notes81.herokuapp.com/api/notes/favorite/{id} - добавить заметку в избранное
+
+POST https://notes81.herokuapp.com/api/notes - создать заметку
+	!!!!!!передаешь в формате form-data!!!!!
+	в теле запроса передаешь title, text (необ€зательно), audio (необ€зательно)
+	audio - аудиофайл
+
+POST https://notes81.herokuapp.com/api/notes/{note_id} - редактировать заметку
+	в теле запроса передаешь title, text
+
+DELETE https://notes81.herokuapp.com/api/notes/{note_id} - удалить заметку
+
+	

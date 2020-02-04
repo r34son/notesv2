@@ -1,0 +1,25 @@
+POST https://notes81.herokuapp.com/api/register
+	в теле запроса передаешь login, email, password, password_confirm
+
+
+POST https://notes81.herokuapp.com/api/login
+	в теле передаешь email, password
+
+
+GET https://notes81.herokuapp.com/api/notes/{user_id} - получить заметки пользователя
+
+POST https://notes81.herokuapp.com/api/notes - создать заметку
+	в теле запроса передаешь title, text, user_id
+
+POST https://notes81.herokuapp.com/api/notes/{note_id} - редактировать заметку
+	в теле запроса передаешь title, text
+
+DELETE https://notes81.herokuapp.com/api/notes/{note_id} - удалить заметку
+
+GET https://notes81.herokuapp.com/api/favorites/{user_id} - получить избранные заметки пользователя
+
+POST https://notes81.herokuapp.com/api/favorites - добавление заметки в избранное 
+	в теле запроса передаешь user_id, note_id
+
+DELETE https://notes81.herokuapp.com/api/favorites/{note_id} - удаление заметки из избранного
+	
